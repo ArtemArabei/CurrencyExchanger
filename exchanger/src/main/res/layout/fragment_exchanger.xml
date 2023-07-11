@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_standart">
+
+    <TextView
+        android:id="@+id/my_balances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_standart"
+        android:paddingBottom="@dimen/padding_standart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currency_balances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_balances"
+        tools:listitem="@layout/item_currency_balance" />
+
+    <TextView
+        android:id="@+id/currency_exchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_large"
+        android:paddingBottom="@dimen/padding_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currency_balances" />
+
+    <ImageView
+        android:id="@+id/sell_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/padding_standart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currency_exchange" />
+
+
+    <ImageView
+        android:id="@+id/receive_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:paddingEnd="@dimen/padding_standart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sell_icon" />
+
+    <TextView
+        android:id="@+id/sell_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/sell_icon"
+        app:layout_constraintStart_toEndOf="@id/sell_icon"
+        app:layout_constraintTop_toTopOf="@id/sell_icon" />
+
+    <TextView
+        android:id="@+id/receive_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toBottomOf="@id/receive_icon"
+        app:layout_constraintStart_toEndOf="@id/receive_icon"
+        app:layout_constraintTop_toTopOf="@id/receive_icon" />
+
+    <EditText
+        android:id="@+id/amount_to_sell_edit_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintBottom_toBottomOf="@id/sell_icon"
+        app:layout_constraintEnd_toStartOf="@id/currency_to_sell_spinner"
+        app:layout_constraintTop_toTopOf="@id/sell_icon" />
+
+    <TextView
+        android:id="@+id/amount_to_receive_text_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toBottomOf="@id/receive_icon"
+        app:layout_constraintEnd_toStartOf="@id/currency_to_receive_spinner"
+        app:layout_constraintStart_toStartOf="@id/amount_to_sell_edit_text_field"
+        app:layout_constraintTop_toTopOf="@id/receive_icon" />
+
+    <Spinner
+        android:id="@+id/currency_to_sell_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintBottom_toBottomOf="@id/sell_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sell_icon" />
+
+    <Spinner
+        android:id="@+id/currency_to_receive_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintBottom_toBottomOf="@id/receive_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/currency_to_sell_spinner"
+        app:layout_constraintTop_toTopOf="@id/receive_icon" />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_button_text"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/padding_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receive_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
