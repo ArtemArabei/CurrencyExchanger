@@ -24,7 +24,6 @@ If needed, all default values (base currency, base balance, commission fee, numb
 
 Copy the following link:
 https://github.com/ArtemArabei/CurrencyExchanger.git
-
 Open Android Studio and choose "File" -> "New" -> "Project from Version Control".
 Paste the link in the "URL:" field and press "Clone ".
 
